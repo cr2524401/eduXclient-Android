@@ -143,6 +143,10 @@ Read-only list of courses that this user is enrolled in.
 Course About Detail
 -------------------
 
+Notes:
+
+"status": "new" if course.is_newish else None
+
 ::
 
     GET /public_api/course_info/edX+Open_DemoX+edx_demo_course/about
@@ -152,9 +156,15 @@ Course About Detail
     Allow: GET, HEAD, OPTIONS
 
     {
-        "overview": "<section class=\"about\">\n   <h2>About This Course</h2>\n   <p>Include your long course description here. The long course description should contain 150-400 words.</p>\n\n   <p>This is paragraph 2 of the long course description. Add more paragraphs as needed. Make sure to enclose them in paragraph tags.</p>\n </section>\n\n <section class=\"prerequisites\">\n   <h2>Prerequisites</h2>\n   <p>Add information about course prerequisites here.</p>\n </section>\n\n <section class=\"course-staff\">\n   <h2>Course Staff</h2>\n   <article class=\"teacher\">\n     <div class=\"teacher-image\">\n       <img src=\"/static/images/pl-faculty.png\" align=\"left\" style=\"margin:0 20 px 0\">\n     </div>\n\n     <h3>Staff Member #1</h3>\n     <p>Biography of instructor/staff member #1</p>\n   </article>\n\n   <article class=\"teacher\">\n     <div class=\"teacher-image\">\n       <img src=\"/static/images/pl-faculty.png\" align=\"left\" style=\"margin:0 20 px 0\">\n     </div>\n\n     <h3>Staff Member #2</h3>\n     <p>Biography of instructor/staff member #2</p>\n   </article>\n </section>\n\n <section class=\"faq\">\n   <section class=\"responses\">\n     <h2>Frequently Asked Questions</h2>\n     <article class=\"response\">\n       <h3>Do I need to buy a textbook?</h3>\n       <p>No, a free online version of Chemistry: Principles, Patterns, and Applications, First Edition by Bruce Averill and Patricia Eldredge will be available, though you can purchase a printed version (published by FlatWorld Knowledge) if you\u2019d like.</p>\n     </article>\n\n     <article class=\"response\">\n       <h3>Question #2</h3>\n       <p>Your answer would be displayed here.</p>\n     </article>\n   </section>\n </section>"
+        "status": null, 
+        "title": "edX Demonstration Course", 
+        "short_description": "", 
+        "overview": "<section class=\"about\">\n   <h2>About This Course</h2>\n   <p>Include your long course description here. The long course description should contain 150-400 words.</p>\n\n   <p>This is paragraph 2 of the long course description. Add more paragraphs as needed. Make sure to enclose them in paragraph tags.</p>\n </section>\n\n <section class=\"prerequisites\">\n   <h2>Prerequisites</h2>\n   <p>Add information about course prerequisites here.</p>\n </section>\n\n <section class=\"course-staff\">\n   <h2>Course Staff</h2>\n   <article class=\"teacher\">\n     <div class=\"teacher-image\">\n       <img src=\"/static/images/pl-faculty.png\" align=\"left\" style=\"margin:0 20 px 0\">\n     </div>\n\n     <h3>Staff Member #1</h3>\n     <p>Biography of instructor/staff member #1</p>\n   </article>\n\n   <article class=\"teacher\">\n     <div class=\"teacher-image\">\n       <img src=\"/static/images/pl-faculty.png\" align=\"left\" style=\"margin:0 20 px 0\">\n     </div>\n\n     <h3>Staff Member #2</h3>\n     <p>Biography of instructor/staff member #2</p>\n   </article>\n </section>\n\n <section class=\"faq\">\n   <section class=\"responses\">\n     <h2>Frequently Asked Questions</h2>\n     <article class=\"response\">\n       <h3>Do I need to buy a textbook?</h3>\n       <p>No, a free online version of Chemistry: Principles, Patterns, and Applications, First Edition by Bruce Averill and Patricia Eldredge will be available, though you can purchase a printed version (published by FlatWorld Knowledge) if you\u2019d like.</p>\n     </article>\n\n     <article class=\"response\">\n       <h3>Question #2</h3>\n       <p>Your answer would be displayed here.</p>\n     </article>\n   </section>\n </section>", 
+        "university": "edX", 
+        "start-date": "1970/01/01", 
+        "course-number": "edX/Open_DemoX/edx_demo_course", 
+        "course_image_url": "/c4x/edX/Open_DemoX/asset/images_course_image.jpg"
     }
-
 
 
 Course Updates List
