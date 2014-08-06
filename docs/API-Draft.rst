@@ -203,6 +203,68 @@ Please just render this in an HTML view for now.
     }
 
 
+课程列表
+========
+ 
+Anonymous Course Enrollments List
+----------------------------------
+
+Read-only list of all courses.
+
+::
+
+    GET /public_api/users/fmyzjs/courses_list/
+    HTTP 200 OK
+    Content-Type: application/json
+    Vary: Accept
+    Allow: GET, HEAD, OPTIONS
+
+
+    [
+        {
+            "created": "2014-07-19T08:57:41Z", 
+            "is_active": true, 
+            "course": {
+                "course_about": "http://211.68.39.82/public_api/course_info/edX+Open_DemoX+edx_demo_course/about", 
+                "course_updates": "http://211.68.39.82/public_api/course_info/edX+Open_DemoX+edx_demo_course/updates", 
+                "number": "Open_DemoX", 
+                "org": "edX", 
+                "video_outline": "http://211.68.39.82/public_api/video_outlines/edX+Open_DemoX+edx_demo_course", 
+                "id": "edX+Open_DemoX+edx_demo_course", 
+                "latest_updates": {
+                    "video": null
+                }, 
+                "end": null, 
+                "name": "edX Demonstration Course", 
+                "course_handouts": "http://211.68.39.82/public_api/course_info/edX+Open_DemoX+edx_demo_course/handouts", 
+                "start": "1970-01-01T05:00:00Z", 
+                "course_image": "/c4x/edX/Open_DemoX/asset/images_course_image.jpg"
+            }
+        }, 
+        {
+            "created": "2014-08-06T09:05:01Z", 
+            "is_active": true, 
+            "course": {
+                "course_about": "http://211.68.39.82/public_api/course_info/TsinghuaX+MOOC101+2014_T1/about", 
+                "course_updates": "http://211.68.39.82/public_api/course_info/TsinghuaX+MOOC101+2014_T1/updates", 
+                "number": "MOOC101", 
+                "org": "TsinghuaX", 
+                "video_outline": "http://211.68.39.82/public_api/video_outlines/TsinghuaX+MOOC101+2014_T1", 
+                "id": "TsinghuaX+MOOC101+2014_T1", 
+                "latest_updates": {
+                    "video": null
+                }, 
+                "end": null, 
+                "name": "MOOCs\u5236\u4f5c\u4e0e\u8fd0\u8425", 
+                "course_handouts": "http://211.68.39.82/public_api/course_info/TsinghuaX+MOOC101+2014_T1/handouts", 
+                "start": "2014-07-17T00:00:00Z", 
+                "course_image": "/c4x/TsinghuaX/MOOC101/asset/images_course_image.jpg"
+            }
+        }
+    ]
+
+
+
 
 课程视频信息
 ============
