@@ -9,5 +9,14 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    
+    <string-array name="drawer">
+        <item>我的课程</item>
+        <item>课程浏览</item>
+        <item>应用设置</item>
+        <item>意见反馈</item>
+        <item>打赏我们</item>
+        <item>退出账号</item>
+    </string-array>
 
 </resources>

@@ -5,4 +5,11 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Zhihu.TextAppearance.Title.Main" parent="@android:style/TextAppearance.Holo">
+        <item name="android:textColor">@color/drawer_text_selector</item>
+    </style>
+
+    <style name="Zhihu.TextAppearance.Title.Main.Large" parent="@style/Zhihu.TextAppearance.Title.Main">
+        <item name="android:textSize">@dimen/text_size_large_18</item>
+    </style>
 </resources>
