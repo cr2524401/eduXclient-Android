@@ -1,5 +1,6 @@
 package com.hcjcch.edx.edxclient;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -21,6 +22,13 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.hcjcch.edx.Adapter.DrawerAdapter;
+
+import org.androidannotations.annotations.EFragment;
+import org.androidannotations.annotations.res.StringArrayRes;
+
+import java.util.ArrayList;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -58,7 +66,12 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
+    String[] drawerStrings;
+
+    ArrayList<Integer> drawables = new ArrayList<Integer>();
+
     public NavigationDrawerFragment() {
+
     }
 
     @Override
@@ -74,6 +87,14 @@ public class NavigationDrawerFragment extends Fragment {
             mCurrentSelectedPosition = savedInstanceState.getInt(STATE_SELECTED_POSITION);
             mFromSavedInstanceState = true;
         }
+
+        drawerStrings = getResources().getStringArray(R.array.drawer);
+        drawables.add(R.drawable.ic_nav_mycourse);
+        drawables.add(R.drawable.ic_nav_browse);
+        drawables.add(R.drawable.ic_nav_setting);
+        drawables.add(R.drawable.ic_nav_comment);
+        drawables.add(R.drawable.ic_nav_grade);
+        drawables.add(R.drawable.ic_nav_logout);
 
         // Select either the default item (0) or the last selected item.
         selectItem(mCurrentSelectedPosition);
@@ -97,7 +118,10 @@ public class NavigationDrawerFragment extends Fragment {
                 selectItem(position);
             }
         });
-        mDrawerListView.setAdapter(new ArrayAdapter<String>(
+
+        DrawerAdapter adapter = new DrawerAdapter(getActivity(),drawerStrings,drawables);
+        mDrawerListView.setAdapter(adapter);
+        /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
                 android.R.layout.simple_list_item_1,
                 android.R.id.text1,
@@ -105,7 +129,7 @@ public class NavigationDrawerFragment extends Fragment {
                         getString(R.string.title_section1),
                         getString(R.string.title_section2),
                         getString(R.string.title_section3),
-                }));
+                }));*/
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }
