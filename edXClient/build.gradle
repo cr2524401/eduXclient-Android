@@ -27,11 +27,11 @@ dependencies {
     compile 'com.android.support:support-v4:20.0.0'
     compile 'de.greenrobot:eventbus:2.2.1'
     apt "org.androidannotations:androidannotations:$AAVersion"
-    compile "org.androidannotations:androidannotations-api:$AAVersion"
     compile 'com.andreabaccega:android-form-edittext:1.0.5@aar'
     compile 'com.github.castorflex.smoothprogressbar:library:0.5.2'
     compile 'com.loopj.android:android-async-http:1.4.5'
     compile 'com.github.eluleci:flatui:2.1.1'
+    compile files('src/main/libs/universal-image-loader-1.9.2.jar')
 }
 
 apt {
