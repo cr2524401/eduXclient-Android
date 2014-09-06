@@ -1,9 +1,7 @@
 package com.hcjcch.edx.edxclient;
 
-import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
+import android.app.ActionBar;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
@@ -19,14 +17,12 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.hcjcch.edx.Adapter.DrawerAdapter;
-
-import org.androidannotations.annotations.EFragment;
-import org.androidannotations.annotations.res.StringArrayRes;
 
 import java.util.ArrayList;
 
@@ -35,6 +31,7 @@ import java.util.ArrayList;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
+
 public class NavigationDrawerFragment extends Fragment {
 
     /**
@@ -69,6 +66,8 @@ public class NavigationDrawerFragment extends Fragment {
     String[] drawerStrings;
 
     ArrayList<Integer> drawables = new ArrayList<Integer>();
+
+    private RelativeLayout user_header;
 
     public NavigationDrawerFragment() {
 
@@ -110,8 +109,10 @@ public class NavigationDrawerFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        mDrawerListView = (ListView) inflater.inflate(
-                R.layout.fragment_navigation_drawer, container, false);
+        LinearLayout linearLayout = (LinearLayout) inflater.inflate(
+                R.layout.fragment_navigation_drawer, container,false);
+        user_header = (RelativeLayout) linearLayout.findViewById(R.id.drawer_header_user);
+        mDrawerListView = (ListView) linearLayout.findViewById(R.id.drawer_list);
         mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -121,17 +122,8 @@ public class NavigationDrawerFragment extends Fragment {
 
         DrawerAdapter adapter = new DrawerAdapter(getActivity(),drawerStrings,drawables);
         mDrawerListView.setAdapter(adapter);
-        /*mDrawerListView.setAdapter(new ArrayAdapter<String>(
-                getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
-                }));*/
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
-        return mDrawerListView;
+        return linearLayout;
     }
 
     public boolean isDrawerOpen() {
@@ -259,8 +251,8 @@ public class NavigationDrawerFragment extends Fragment {
         // If the drawer is open, show the global app actions in the action bar. See also
         // showGlobalContextActionBar, which controls the top-left area of the action bar.
         if (mDrawerLayout != null && isDrawerOpen()) {
-            inflater.inflate(R.menu.global, menu);
-            showGlobalContextActionBar();
+            //inflater.inflate(R.menu.global, menu);
+            //showGlobalContextActionBar();
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
@@ -291,7 +283,7 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     private ActionBar getActionBar() {
-        return ((ActionBarActivity) getActivity()).getSupportActionBar();
+        return getActivity().getActionBar();
     }
 
     /**
