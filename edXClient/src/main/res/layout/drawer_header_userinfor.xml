@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/li_user"
+    android:layout_width="fill_parent"
+    android:layout_height="180dp"
+    android:layout_alignParentLeft="true"
+    android:layout_centerVertical="true"
+    android:background="@color/md_light_blue_500"
+    android:paddingLeft="@dimen/margin_medium_10">
+
+    <com.hcjcch.edx.ui.CircleImageView
+        android:id="@+id/user_icon"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:src="@drawable/place_user"
+        android:layout_centerInParent="true"/>
+
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/user_icon"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="hcjcch"
+        android:layout_marginTop="6dp"
+        android:textSize="@dimen/text_size_large_18"
+        android:textColor="@color/md_white_1000"
+        />
+
+</RelativeLayout>

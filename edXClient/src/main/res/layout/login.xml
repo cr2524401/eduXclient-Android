@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:whatever="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/activity_login_progress_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="4.0dip"
+        android:layout_alignParentTop="true">
+        <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+            android:id="@+id/activity_login_progress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            whatever:spbStyle="@style/GPlusProgressBar"
+            android:indeterminate="true"/>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/activity_login_progress_layout">
+
+        <RelativeLayout
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/activity_login_layout"
+            android:layout_marginTop="20dip"
+            android:paddingLeft="16.0dip"
+            android:paddingRight="16.0dip"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <com.andreabaccega.widget.FormEditText
+                whatever:testType="email"
+                android:id="@+id/et_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/input_background"
+                android:hint="@string/activity_login_email_hint"
+                android:padding="6.0dip"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="5.0dip"
+                whatever:emptyErrorString="@string/empty_email"
+                whatever:testErrorString="@string/error_email"
+                android:inputType="textEmailAddress" />
+
+            <com.andreabaccega.widget.FormEditText
+                whatever:emptyErrorString="@string/empty_passwd"
+                whatever:testType="nocheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_login_passwd"
+                android:padding="6.0dip"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="5.0dip"
+                android:layout_marginTop="20dip"
+                android:layout_below="@+id/et_email"
+                android:hint="@string/activity_login_passwd_hint"
+                android:background="@drawable/input_background"
+                android:layout_alignLeft="@id/et_email"
+                android:layout_alignRight="@id/et_email" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/activity_login"
+                android:layout_alignLeft="@id/et_email"
+                android:layout_alignRight="@id/et_email"
+                android:layout_below="@id/activity_login_passwd"
+                android:layout_marginTop="20dip"
+                android:text="@string/activity_login_btn"
+                android:background="@drawable/login_btn"
+                android:textColor="@color/md_white_1000" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <!--<TextView
+        android:id="@+id/no_network"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textColor="@color/md_white_1000"
+        android:text="@string/no_network"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:background="#80f48fb1"/>-->
+</RelativeLayout>
