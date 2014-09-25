@@ -219,10 +219,10 @@ Video Summary List
 
 ::
 
-HTTP 200 OK
-Content-Type: application/json
-Vary: Accept
-Allow: GET, HEAD, OPTIONS
+    HTTP 200 OK
+    Content-Type: application/json
+    Vary: Accept
+    Allow: GET, HEAD, OPTIONS
 
     [
         {
