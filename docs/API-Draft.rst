@@ -3,7 +3,8 @@ OAuth2
 
 ::
     
-    curl -X POST -d "grant_type=password&username=<user_name>&password=<password>" http://<client_id>:<client_secret>@59.64.64.24/oauth2/access_token
+    curl -X POST -d "grant_type=password&username=<user_name>&password=<password>" \
+    http://<client_id>:<client_secret>@59.64.64.24/oauth2/access_token
 
 ::
     
@@ -11,7 +12,8 @@ OAuth2
 
 ::  
     
-    curl -H "Authorization: Bearer <your_access_token>" http://59.64.64.24/api/mobile/v0.5/users/<user_name>/
+    curl -H "Authorization: Bearer <your_access_token>" \
+    http://59.64.64.24/api/mobile/v0.5/users/<user_name>/
 
 ::
     
